@@ -215,218 +215,107 @@ JMenuBar menuBar;
 		this.setVisible(true);
 	}
 
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		panel1.removeAll();
-		if(e.getSource()==dismantle) {
-			panel1.removeAll();
-			
-			
-			panel1.add(label1);
-			this.setVisible(true);
-			
-			
-			
-			file1 = new File("kai.wav");
-			
-			try {
-				AudioInputStream audio1 = AudioSystem.getAudioInputStream(file1);
-				clip1 = AudioSystem.getClip();
-				clip1.open(audio1);
-				clip1.start();
-			}
+	    // Stop any playing clip before starting a new one
+	    stopCurrentAudio();
 
-			catch (UnsupportedAudioFileException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			
-			
-			
-			
-		}
-		
-		else if(e.getSource()==fuga) {
-			this.remove(panel1);
-			
-			file2 = new File("fuga.wav");
-			
-			
-			
-			try {
-				AudioInputStream audio1 = AudioSystem.getAudioInputStream(file2);
-				clip2 = AudioSystem.getClip();
-				clip2.open(audio1);
-				clip2.start();
-			}
+	   
+	    panel1.removeAll();
 
-			catch (UnsupportedAudioFileException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-		}
-			
-		
-			
-			
-			this.add(panel1);
-			panel1.add(label2);
-			this.setVisible(true);
-			
-		}
-		
-		else if(e.getSource()==DE) {
-			panel1.removeAll();
-			file3 = new File("sdo.wav");
-			
-			
-			try {
-				AudioInputStream audio1 = AudioSystem.getAudioInputStream(file3);
-				clip3 = AudioSystem.getClip();
-				clip3.open(audio1);
-				clip3.start();
-			}
+	    if (e.getSource() == dismantle) {
+	        panel1.add(label1);  
+	        playAudio("kai.wav", clip1);
+	    } 
+	    else if (e.getSource() == fuga) {
+	        panel1.add(label2);  
+	        playAudio("fuga.wav", clip2);
+	    } 
+	    else if (e.getSource() == DE) {
+	        panel1.add(label3); 
+	        playAudio("sdo.wav", clip3);
+	    } 
+	    else if (e.getSource() == blue) {
+	        panel1.add(label4);  
+	        playAudio("ampBlue.wav", clip4);
+	    } 
+	    else if (e.getSource() == red) {
+	        panel1.add(label5);  
+	        playAudio("Reverse.wav", clip5);
+	    } 
+	    else if (e.getSource() == purple) {
+	        panel1.add(label6);  
+	        playAudio("HolPurple.wav", clip6);
+	    } 
+	    else if (e.getSource() == idle) {
+	        panel1.add(label7);  
+	        playAudio("idleT.wav", clip7);
+	    }
 
-			catch (UnsupportedAudioFileException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-		}
-			
-			panel1.add(label3);
-			this.setVisible(true);
-		}
-		
-		else if(e.getSource()==blue) {
-			panel1.removeAll();
-			file4 = new File("ampBlue.wav");
-			
-			try {
-				AudioInputStream audio1 = AudioSystem.getAudioInputStream(file4);
-				clip4 = AudioSystem.getClip();
-				clip4.open(audio1);
-				clip4.start();
-			}
-
-			catch (UnsupportedAudioFileException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-		}
-			
-			
-			
-			
-			panel1.add(label4);
-			this.setVisible(true);
-		}
-		
-		else if(e.getSource()==red) {
-			panel1.removeAll();
-			
-			
-			file5 = new File("Reverse.wav");
-			
-			try {
-				AudioInputStream audio1 = AudioSystem.getAudioInputStream(file5);
-				clip5 = AudioSystem.getClip();
-				clip5.open(audio1);
-				clip5.start();
-			}
-
-			catch (UnsupportedAudioFileException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-		}
-			
-			
-			panel1.add(label5);
-			this.setVisible(true);
-		}
-		
-		if(e.getSource()==purple) {
-			panel1.removeAll();
-			
-			file6 = new File("HolPurple.wav");
-			
-			try {
-				AudioInputStream audio1 = AudioSystem.getAudioInputStream(file6);
-				clip6 = AudioSystem.getClip();
-				clip6.open(audio1);
-				clip6.start();
-			}
-
-			catch (UnsupportedAudioFileException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-		}
-			
-			panel1.add(label6);
-			this.setVisible(true);
-		}
-		
-		else if(e.getSource()==idle) {
-			panel1.removeAll();
-		
-			file7 = new File("idleT.wav");
-			
-			try {
-				AudioInputStream audio1 = AudioSystem.getAudioInputStream(file7);
-				clip7 = AudioSystem.getClip();
-				clip7.open(audio1);
-				clip7.start();
-			}
-
-			catch (UnsupportedAudioFileException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-		}
-			
-			
-			panel1.add(label7);
-			this.setVisible(true);
-		}
-		
+	    
+	    panel1.revalidate();
+	    panel1.repaint();
+	    this.setVisible(true);
 	}
 
-}
+	private void stopCurrentAudio() {
+	   
+	    if (clip1 != null && clip1.isRunning()) {
+	        clip1.stop();
+	        clip1.close();  
+	    }
+	    if (clip2 != null && clip2.isRunning()) {
+	        clip2.stop();
+	        clip2.close();
+	    }
+	    if (clip3 != null && clip3.isRunning()) {
+	        clip3.stop();
+	        clip3.close();
+	    }
+	    if (clip4 != null && clip4.isRunning()) {
+	        clip4.stop();
+	        clip4.close();
+	    }
+	    if (clip5 != null && clip5.isRunning()) {
+	        clip5.stop();
+	        clip5.close();
+	    }
+	    if (clip6 != null && clip6.isRunning()) {
+	        clip6.stop();
+	        clip6.close();
+	    }
+	    if (clip7 != null && clip7.isRunning()) {
+	        clip7.stop();
+	        clip7.close();
+	    }
+	}
+
+	private void playAudio(String fileName, Clip clip) {
+	    try {
+	        File audioFile = new File(fileName);
+	        AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
+	        
+	        if (clip != null && clip.isOpen()) {
+	            clip.stop();      
+	            clip.close();      
+	        }
+
+	        clip = AudioSystem.getClip();
+	        clip.open(audioStream);
+	        clip.setFramePosition(0);  
+	        clip.start();
+	    } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+
+	
+
+	
+	
+	}
+
+
