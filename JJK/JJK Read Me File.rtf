@@ -1,0 +1,77 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww28600\viewh16380\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # Character Move Set Application\
+\
+This Java application demonstrates a GUI-based character move set using `JFrame`, `JMenuBar`, and `JPanel`. The application is based on three characters: Sukuna, Gojo, and Kenjaku. Each character has their respective moves, and selecting a move displays an image of the move and plays a corresponding audio clip.\
+\
+## Features\
+\
+- Menu bar navigation for three characters: **Sukuna**, **Gojo**, and **Kenjaku**.\
+- Each character has multiple move options represented as menu items.\
+- Selecting a move displays an image related to the move and plays an audio clip.\
+- Smooth integration of audio playback using `Clip` and `AudioInputStream`.\
+\
+### Characters and Moves:\
+\
+#### Sukuna:\
+- **Dismantle**: Plays the `kai.wav` sound and displays the image `dismantle.png`.\
+- **Fuga**: Plays the `fuga.wav` sound and displays the image `fuga.png`.\
+- **Domain Expansion**: Plays the `sdo.wav` sound and displays the image `tenkai.png`.\
+\
+#### Gojo:\
+- **Reversal Red**: Plays the `Reverse.wav` sound and displays the image `blue.png`.\
+- **Amplification Blue**: Plays the `ampBlue.wav` sound and displays the image `Red.png`.\
+- **Hollow Purple**: Plays the `HolPurple.wav` sound and displays the image `hollow.png`.\
+\
+#### Kenjaku:\
+- **Idle Transfiguration**: Plays the `idleT.wav` sound and displays the image `idle.png`.\
+\
+## Installation\
+\
+1. Ensure that you have Java installed on your machine.\
+2. Download or clone this repository.\
+3. Ensure you have all the image and audio files in the project directory:\
+   - Images: `dismantle.png`, `fuga.png`, `tenkai.png`, `blue.png`, `Red.png`, `hollow.png`, `idle.png`\
+   - Audio files: `kai.wav`, `fuga.wav`, `sdo.wav`, `ampBlue.wav`, `Reverse.wav`, `HolPurple.wav`, `idleT.wav`\
+\
+## Running the Application\
+\
+1. Open the project in your preferred IDE or compile it from the terminal using the following command:\
+    ```bash\
+    javac chars.java\
+    ```\
+2. Run the application:\
+    ```bash\
+    java chars\
+    ```\
+\
+## Dependencies\
+\
+- Java Swing (`javax.swing.*`) for GUI elements.\
+- Java Sound API (`javax.sound.sampled.*`) for audio playback.\
+\
+## How It Works\
+\
+- The application uses a `JMenuBar` with multiple `JMenu` items representing the three characters.\
+- Each menu item corresponds to a specific move, triggering an `ActionListener` that loads the corresponding image and plays an audio file.\
+- The `JPanel` is used to display the move image, and audio playback is handled using `Clip`.\
+\
+## Key Bindings\
+\
+- **Alt + F**: Opens Sukuna's move set.\
+- **Alt + E**: Opens Gojo's move set.\
+- **Alt + H**: Opens Kenjaku's move set.\
+- **S**: Shortcut for Sukuna's "Dismantle".\
+- **L**: Shortcut for Sukuna's "Fuga".\
+- **X**: Shortcut for Sukuna's "Domain Expansion".\
+\
+## License\
+\
+This project is for educational purposes.\
+\
+}
